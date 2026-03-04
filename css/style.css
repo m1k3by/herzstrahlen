@@ -406,7 +406,11 @@ footer {
 
   /* Hero */
   #start { padding-left: 20px; padding-right: 20px; }
-  .hero-logo { width: 96vw; max-width: 96vw; }
+  .hero-logo {
+    width: 130vw;
+    max-width: none;
+    margin-left: calc(-15vw);
+  }
 
   /* Mütterpflege: einspaltig + Bild zentriert */
   .muetterpflege-layout { grid-template-columns: 1fr; }
