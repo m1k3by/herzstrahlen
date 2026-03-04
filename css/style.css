@@ -405,11 +405,11 @@ footer {
   nav { padding: 0 20px; }
 
   /* Hero */
-  #start { padding-left: 20px; padding-right: 20px; }
+  #start { padding-left: 0; padding-right: 0; }
   .hero-logo {
-    width: 130vw;
+    width: 100%;
     max-width: none;
-    margin-left: calc(-15vw);
+    margin-left: 0;
   }
 
   /* Mütterpflege: einspaltig + Bild zentriert */
