@@ -1,0 +1,353 @@
+/* ============================================================
+   Herzstrahlen – Hauptstylesheet
+   Autorin: Simone | Mütterpflege mit Herz
+   ============================================================ */
+
+
+/* ── Grundeinstellungen ── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --hintergrund: #cdc4c4;
+  --rot:         #7d1a28;
+  --schrift:     #7a0000;
+  --kreis:       #dcccc0;
+  --nav-hoehe:   68px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--hintergrund);
+  color: var(--schrift);
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+
+/* ── Navigation ── */
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-hoehe);
+  background: var(--hintergrund);
+  border-bottom: 1px solid rgba(125, 26, 40, .15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 100;
+  backdrop-filter: blur(6px);
+}
+
+nav .nav-logo img {
+  height: 44px;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--schrift);
+  transition: color .2s;
+}
+
+nav ul li a:hover {
+  color: var(--rot);
+}
+
+/* Hamburger-Button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--rot);
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+
+/* Mobiles Menü – geöffneter Zustand */
+.nav-offen ul {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: var(--nav-hoehe);
+  left: 0; right: 0;
+  background: var(--hintergrund);
+  padding: 24px 32px 32px;
+  border-bottom: 1px solid rgba(125, 26, 40, .15);
+  gap: 20px;
+}
+
+.nav-offen .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-offen .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav-offen .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ── Hero / Startbereich ── */
+
+#start {
+  padding-top: calc(var(--nav-hoehe) + 56px);
+  padding-bottom: 64px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  text-align: center;
+}
+
+.hero-logo {
+  display: block;
+  margin: 0 auto 0px;
+  width: 920px;
+  max-width: 90%;
+}
+
+#start p {
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  max-width: 580px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* CTA-Button */
+.cta-button {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 12px 32px;
+  border: 1.5px solid var(--rot);
+  color: var(--rot);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: background .2s, color .2s;
+  border-radius: 2px;
+}
+
+.cta-button:hover {
+  background: var(--rot);
+  color: #fff;
+}
+
+
+/* ── Sektionen (allgemein) ── */
+
+.sektion {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  border-top: 1px solid rgba(125, 26, 40, .12);
+}
+
+/* Kreis-Überschrift */
+.titel-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 52px;
+}
+
+.titel-kreis {
+  width: 160px;
+  height: 160px;
+  background-color: var(--kreis);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.titel-kreis h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rot);
+  text-align: center;
+  line-height: 1.5;
+}
+
+
+/* ── Mütterpflege-Bereich ── */
+
+.muetterpflege-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.muetterpflege-text p {
+  font-size: 0.93rem;
+  margin-bottom: 16px;
+}
+
+.muetterpflege-bild {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.muetterpflege-bild img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.muetterpflege-bild .bildunterschrift {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  color: var(--schrift);
+  text-align: center;
+}
+
+
+/* ── Über-mich-Bereich ── */
+
+.ueber-text p {
+  font-size: 0.93rem;
+  margin-bottom: 14px;
+}
+
+
+/* ── Leistungen ── */
+
+.leistungen-raster {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.leistung-karte {
+  background: rgba(255, 255, 255, .18);
+  border: 1px solid rgba(125, 26, 40, .1);
+  border-radius: 8px;
+  padding: 24px 22px;
+}
+
+.leistung-karte h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rot);
+  margin-bottom: 10px;
+}
+
+.leistung-karte p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+
+/* ── Kontakt ── */
+
+#kontakt {
+  text-align: center;
+}
+
+.kontakt-symbole {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 28px 0;
+}
+
+.kontakt-symbole a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(125, 26, 40, .35);
+  transition: background .2s, border-color .2s;
+}
+
+.kontakt-symbole a:hover {
+  background: var(--rot);
+  border-color: var(--rot);
+}
+
+.kontakt-symbole a:hover svg {
+  stroke: #fff;
+}
+
+#kontakt p {
+  font-size: 0.93rem;
+}
+
+
+/* ── Fußzeile ── */
+
+footer {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: rgba(122, 0, 0, .45);
+  border-top: 1px solid rgba(125, 26, 40, .12);
+}
+
+
+/* ── Responsive – Tablet & Smartphone ── */
+
+@media (max-width: 700px) {
+  /* Navigation: Hamburger anzeigen, Links verstecken */
+  nav ul { display: none; }
+  .nav-toggle { display: flex; }
+  nav { padding: 0 20px; }
+
+  /* Hero */
+  #start { padding-left: 20px; padding-right: 20px; }
+  .hero-logo { width: 260px; }
+
+  /* Mütterpflege: einspaltig */
+  .muetterpflege-layout { grid-template-columns: 1fr; }
+  .muetterpflege-bild {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .muetterpflege-bild img { max-width: 200px; }
+
+  /* Leistungen: einspaltig */
+  .leistungen-raster { grid-template-columns: 1fr; }
+
+  /* Sektionen */
+  .sektion { padding: 60px 20px; }
+}
+
+@media (max-width: 440px) {
+  .titel-kreis { width: 140px; height: 140px; }
+}
