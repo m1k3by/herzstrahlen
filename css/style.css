@@ -39,39 +39,67 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--nav-hoehe);
-  background: var(--hintergrund);
-  border-bottom: 1px solid rgba(125, 26, 40, .15);
+  background: rgba(205, 196, 196, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(125, 26, 40, .12);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 32px;
   z-index: 100;
-  backdrop-filter: blur(6px);
+  transition: background .35s, box-shadow .35s;
 }
 
-nav .nav-logo img {
-  height: 44px;
-  display: block;
+/* Scrolled-Zustand – etwas dunkler & mit Schatten */
+nav.gescrollt {
+  background: rgba(195, 185, 185, 0.92);
+  box-shadow: 0 2px 20px rgba(122, 0, 0, .08);
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 32px;
+  gap: 40px;
+  align-items: center;
+}
+
+nav ul li {
+  position: relative;
 }
 
 nav ul li a {
   text-decoration: none;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--schrift);
-  transition: color .2s;
+  padding: 4px 0;
+  transition: color .25s;
 }
 
-nav ul li a:hover {
+/* Unterstrich-Animation beim Hover */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--rot);
+  transition: width .3s ease;
+}
+
+nav ul li a:hover { color: var(--rot); }
+nav ul li a:hover::after { width: 100%; }
+
+/* Aktiver Menüpunkt */
+nav ul li a.aktiv {
   color: var(--rot);
+}
+nav ul li a.aktiv::after {
+  width: 100%;
 }
 
 /* Hamburger-Button */
@@ -276,35 +304,32 @@ nav ul li a:hover {
   text-align: center;
 }
 
-.kontakt-symbole {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  margin: 28px 0;
+.kontakt-kreis {
+  width: 230px !important;
+  height: 230px !important;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.kontakt-symbole a {
+.kontakt-kreis-icons {
   display: flex;
+  gap: 20px;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(125, 26, 40, .35);
-  transition: background .2s, border-color .2s;
 }
 
-.kontakt-symbole a:hover {
-  background: var(--rot);
-  border-color: var(--rot);
+.kontakt-kreis-icons a {
+  display: flex;
+  transition: transform .25s;
 }
 
-.kontakt-symbole a:hover svg {
-  stroke: #fff;
+.kontakt-kreis-icons a:hover {
+  transform: scale(1.15);
 }
 
 #kontakt p {
   font-size: 0.93rem;
+  margin-top: 20px;
 }
 
 
@@ -330,16 +355,16 @@ footer {
 
   /* Hero */
   #start { padding-left: 20px; padding-right: 20px; }
-  .hero-logo { width: 260px; }
+  .hero-logo { width: 340px; }
 
-  /* Mütterpflege: einspaltig */
+  /* Mütterpflege: einspaltig + Bild zentriert */
   .muetterpflege-layout { grid-template-columns: 1fr; }
   .muetterpflege-bild {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
   }
-  .muetterpflege-bild img { max-width: 200px; }
+  .muetterpflege-bild img { max-width: 90%; }
 
   /* Leistungen: einspaltig */
   .leistungen-raster { grid-template-columns: 1fr; }

@@ -16,9 +16,6 @@
 
   <!-- ── Navigation ── -->
   <nav id="navbar">
-    <a class="nav-logo" href="#start">
-      <img src="images/HERZSTRAHLEN (1).png" alt="Herzstrahlen Logo" />
-    </a>
     <ul id="nav-menue">
       <li><a href="#muetterpflege">Mütterpflege</a></li>
       <li><a href="#ueber-mich">Über mich</a></li>
@@ -136,25 +133,39 @@
   <!-- ── Kontakt ── -->
   <section id="kontakt" class="sektion">
     <div class="titel-wrap">
-      <div class="titel-kreis" style="width:140px;height:140px;">
+      <div class="titel-kreis kontakt-kreis">
         <h2>Kontakt</h2>
+        <div class="kontakt-kreis-icons">
+          <a href="mailto:" aria-label="E-Mail schreiben">
+            <!-- Briefumschlag – leicht gekippt wie im Bild -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none"
+                 stroke="var(--rot)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
+                 style="transform: rotate(-12deg);">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7l10 7 10-7"/>
+            </svg>
+          </a>
+          <a href="tel:" aria-label="Anrufen">
+            <!-- Smartphone – leicht gekippt wie im Bild -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none"
+                 stroke="var(--rot)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
+                 style="transform: rotate(12deg);">
+              <rect x="7" y="2" width="10" height="20" rx="2"/>
+              <circle cx="12" cy="17" r="0.8" fill="var(--rot)"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+            <!-- Instagram -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none"
+                 stroke="var(--rot)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
+                 style="transform: rotate(-8deg);">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="var(--rot)"/>
+            </svg>
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="kontakt-symbole">
-      <a href="mailto:" aria-label="E-Mail schreiben">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-             stroke="#7d1a28" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="4" width="20" height="16" rx="2"/>
-          <path d="M2 7l10 7 10-7"/>
-        </svg>
-      </a>
-      <a href="tel:" aria-label="Anrufen">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-             stroke="#7d1a28" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="7" y="2" width="10" height="20" rx="2"/>
-          <circle cx="12" cy="17" r="1"/>
-        </svg>
-      </a>
     </div>
     <p>Nehme gerne Kontakt auf und schreibe mir oder melde dich unter folgender Nummer bei mir.</p>
   </section>

@@ -19,3 +19,35 @@ document.querySelectorAll('#nav-menue a').forEach(link => {
     navbar.classList.remove('nav-offen');
   });
 });
+
+
+/* ── Nav: Scroll-Effekt (Hintergrund dunkler beim Scrollen) ── */
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) {
+    navbar.classList.add('gescrollt');
+  } else {
+    navbar.classList.remove('gescrollt');
+  }
+});
+
+
+/* ── Aktiver Menüpunkt per IntersectionObserver ── */
+
+const sektionen = document.querySelectorAll('section[id], div[id]');
+const navLinks  = document.querySelectorAll('#nav-menue a');
+
+const beobachter = new IntersectionObserver((eintraege) => {
+  eintraege.forEach(eintrag => {
+    if (eintrag.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.remove('aktiv');
+        if (link.getAttribute('href') === '#' + eintrag.target.id) {
+          link.classList.add('aktiv');
+        }
+      });
+    }
+  });
+}, { threshold: 0.4 });
+
+sektionen.forEach(s => beobachter.observe(s));
