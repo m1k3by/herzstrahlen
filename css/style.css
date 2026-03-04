@@ -4,6 +4,35 @@
    ============================================================ */
 
 
+/* ── WCAG: Skip-Link (unsichtbar außer bei Fokus) ── */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  padding: 8px 16px;
+  background: var(--rot);
+  color: #fff;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top .2s;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* WCAG: Fokus-Stile für alle interaktiven Elemente */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--rot);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+
 /* ── Grundeinstellungen ── */
 
 *, *::before, *::after {
@@ -27,7 +56,8 @@ html {
 body {
   background-color: var(--hintergrund);
   color: var(--schrift);
-  font-family: 'Lato', sans-serif;
+  /* Systemschriften – kein externer Server, DSGVO-konform */
+  font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
   font-weight: 300;
   line-height: 1.75;
 }
@@ -215,7 +245,7 @@ nav ul li a.aktiv::after {
 }
 
 .titel-kreis h2 {
-  font-family: 'Playfair Display', serif;
+    font-family: Georgia, 'Times New Roman', serif;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -253,7 +283,8 @@ nav ul li a.aktiv::after {
 }
 
 .muetterpflege-bild .bildunterschrift {
-  font-family: 'Dancing Script', cursive;
+  font-family: Georgia, 'Palatino Linotype', serif;
+  font-style: italic;
   font-size: 1.1rem;
   color: var(--schrift);
   text-align: center;
@@ -284,7 +315,7 @@ nav ul li a.aktiv::after {
 }
 
 .leistung-karte h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -342,6 +373,26 @@ footer {
   letter-spacing: 0.06em;
   color: rgba(122, 0, 0, .45);
   border-top: 1px solid rgba(125, 26, 40, .12);
+}
+
+.footer-nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-nav a {
+  color: rgba(122, 0, 0, .6);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  transition: color .2s;
+}
+
+.footer-nav a:hover {
+  color: var(--rot);
 }
 
 

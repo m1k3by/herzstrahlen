@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Herzstrahlen – Mütterpflege mit Herz</title>
+  <meta name="description" content="Simone begleitet Dich als Mütterpflegerin liebevoll und achtsam durch das Wochenbett – alltagsnahe Hilfe für Deine Reise ins Mama-Sein." />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@700&family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet" />
-  <!-- Stylesheet -->
+  <!-- Stylesheet (keine externen Schriftarten – DSGVO-konform) -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+  <!-- ── Sprunglink für Screenreader (WCAG 2.4.1) ── -->
+  <a class="skip-link" href="#hauptinhalt">Zum Hauptinhalt springen</a>
 
   <!-- ── Navigation ── -->
   <nav id="navbar">
@@ -29,6 +29,7 @@
 
 
   <!-- ── Startbereich / Hero ── -->
+  <main id="hauptinhalt">
   <section id="start">
     <img class="hero-logo" src="images/HERZSTRAHLEN.svg" alt="Herzstrahlen" />
     <p>
@@ -171,9 +172,16 @@
   </section>
 
 
+  </main>
+
   <!-- ── Fußzeile ── -->
   <footer>
     <p>© 2026 Herzstrahlen · Simone · Mütterpflege mit Herz</p>
+    <nav class="footer-nav" aria-label="Rechtliches">
+      <a href="impressum.html">Impressum</a>
+      <span aria-hidden="true">·</span>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
   </footer>
 
 
