@@ -387,6 +387,98 @@ nav ul li a.aktiv::after {
 }
 
 
+/* ── FAQ ── */
+
+.faq-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faq-eintrag {
+  border-bottom: 1px solid rgba(125, 26, 40, .12);
+}
+
+.faq-eintrag:first-child {
+  border-top: 1px solid rgba(125, 26, 40, .12);
+}
+
+.faq-frage {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--schrift);
+  text-align: left;
+  transition: color .2s;
+}
+
+.faq-frage:hover {
+  color: var(--rot);
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--rot);
+  border-radius: 2px;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.faq-icon::before {
+  width: 16px;
+  height: 1.5px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.faq-icon::after {
+  width: 1.5px;
+  height: 16px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.faq-frage[aria-expanded="true"] .faq-icon::after {
+  transform: translateX(-50%) rotate(90deg);
+  opacity: 0;
+}
+
+.faq-antwort {
+  padding-bottom: 20px;
+}
+
+.faq-antwort p {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  margin-bottom: 10px;
+  color: var(--schrift);
+}
+
+.faq-antwort p:last-child {
+  margin-bottom: 0;
+}
+
+
 /* ── Fußzeile ── */
 
 footer {

@@ -3,7 +3,24 @@
    ============================================================ */
 
 
-/* ── Hamburger-Navigation ── */
+/* ── FAQ Accordion ── */
+
+document.querySelectorAll('.faq-frage').forEach(button => {
+  button.addEventListener('click', () => {
+    const offen = button.getAttribute('aria-expanded') === 'true';
+    // alle anderen schließen
+    document.querySelectorAll('.faq-frage').forEach(b => {
+      b.setAttribute('aria-expanded', 'false');
+      b.nextElementSibling.hidden = true;
+    });
+    // geklickten toggling
+    if (!offen) {
+      button.setAttribute('aria-expanded', 'true');
+      button.nextElementSibling.hidden = false;
+    }
+  });
+});
+
 
 const hamburger = document.getElementById('nav-hamburger');
 const navbar    = document.getElementById('navbar');
