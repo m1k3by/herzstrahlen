@@ -293,9 +293,23 @@ nav ul li a.aktiv::after {
 
 /* ── Über-mich-Bereich ── */
 
+.ueber-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
 .ueber-text p {
   font-size: 0.93rem;
   margin-bottom: 14px;
+}
+
+.ueber-bild img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
 }
 
 
@@ -326,6 +340,15 @@ nav ul li a.aktiv::after {
 .leistung-karte p {
   font-size: 0.88rem;
   line-height: 1.65;
+}
+
+.leistungen-info {
+  margin-top: 32px;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--schrift);
+  border-top: 1px solid rgba(125, 26, 40, .1);
+  padding-top: 24px;
 }
 
 
@@ -414,6 +437,9 @@ footer {
 
   /* Mütterpflege: einspaltig + Bild zentriert */
   .muetterpflege-layout { grid-template-columns: 1fr; }
+
+  /* Über mich: einspaltig */
+  .ueber-layout { grid-template-columns: 1fr; }
   .muetterpflege-bild {
     flex-direction: column;
     align-items: center;
